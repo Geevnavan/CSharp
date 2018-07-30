@@ -1,0 +1,68 @@
+The Array class, defined in the System namespace, is the base class for arrays in C#.Array class is an abstract base class but it provides CreateInstance method to construct an array.The Array class provides methods for creating, manipulating, searching, and sorting arrays.
+Table 1 describes Array class properties.
+Table 1. The System.Array Class Properties.
+IsFixedSize
+Return a value indicating if an array has a fixed size or not.
+IsReadOnly
+Returns a value indicating if an array is read-only or not.
+IsSynchronized
+Returns a value indicating if access to an array is thread-safe or not.
+Length
+Returns the total number of items in all the dimensions of an array.
+Rank
+Returns the number of dimensions of an array.
+SyncRoot
+Returns an object that can be used to synchronize access to the array.
+
+Table 2 describes some of the Array class methods.
+Table 2. The System.Array Class Methods.
+BinarySearch
+This method searches a one-dimensional sorted Array for a value, using a binary search algorithm.
+Clear
+This method removes all items of an array and sets a range of items in the array to 0.
+Clone
+This method creates a shallow copy of the Array.
+Copy
+  
+This method copies a section of one Array to another Array and performs type casting and boxing as required.
+CopyTo
+This method copies all the elements of the current one-dimensional Array to the specified one-dimensional Array starting at the specified destination Array index.
+CreateInstance
+This method initializes a new instance of the Array class.
+GetEnumerator
+This method returns an IEnumerator for the Array.
+GetLength
+This method returns the number of items in an Array.
+GetLowerBound
+This method returns the lower bound of an Array.
+GetUpperBound
+This method returns the upper bound of an Array.
+GetValue
+This method returns the value of the specified item in an Array.
+IndexOf
+This method returns the index of the first occurrence of a value in a one-dimensional Array or in a portion of the Array.
+Initialize
+ 
+This method initializes every item of the value-type Array by calling the default constructor of the value type.
+LastIndexOf
+  
+This method returns the index of the last occurrence of a value in a one-dimensional Array or in a portion of the Array.
+Reverse
+This method reverses the order of the items in a one-dimensional Array or in a portion of the Array.
+SetValue
+This method sets the specified items in the current Array to the specified value.
+Sort
+This method sorts the items in one-dimensional Array objects.
+
+The Array Class
+Array class is an abstract base class but it provides CreateInstance method to construct an array.
+Array names = Array.CreateInstance( typeof(String), 2, 4 );
+After creating an array using the CreateInstance method, you can use SetValue method to add items to an array. I will discuss SetValue method later in this article.
+The Array class provides methods for creating, manipulating, searching, and sorting arrays. Array class provides three boolean properties IsFixedSize, IsReadOnly, and IsSynchronized to see if an array has fixed size, read only or synchronized or not respectively. The Length property of Array class returns the number of items in an array and the Rank property returns number of dimensions in a multi-dimension array.
+Listing 1 creates two arrays with a fixed and variable lengths and sends the output to the system console.
+https://www.c-sharpcorner.com/article/programming-C-Sharp-working-with-arrays-in-net/Inn
+The GetLength method returns the number of items in an array. The GetLowerBound and GetUppperBound methods return the lower and upper bounds of an array respectively. All these three methods take at least a parameter, which is the index of the dimension of an array. The following code snippet uses all three methods. 
+string[] names = new string[] {"Rosy","Amy", "Peter","Albert"};
+Console.WriteLine(names.GetLength(0).ToString());
+Console.WriteLine(names.GetLowerBound(0).ToString());
+Console.WriteLine(names.GetUpperBound(0).ToString());
