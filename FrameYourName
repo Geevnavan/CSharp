@@ -1,0 +1,46 @@
+using System;
+
+namespace FrameName
+{
+	class Program
+	{
+        /*
+		 * Write to the console “Hello.  What is your name?”.  Read a name from the console.  Then clear the console and write 
+		 * in the center of the console “Hello <name>!”.  The output should be framed in asterisks (*) with a margin of 1 space 
+		 * around the name.  Use Cyan for the foreground, DarkBlue for the background.
+		 *
+		 * Hints:	Console.Clear, Console.WindowWidth, Console.WindowHeight, Console.SetCursorPosition,  
+		*/
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello. Whats your Name?");
+            string s = Console.ReadLine();
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            int margin = 6;
+            int n = s.Length+(margin*2)+8;
+            for (int i = 0; i < n/2; i++)
+            { 
+                for (int j = 0; j <n; j++)
+                {
+                    if ((i == 0) || (j == 0) || (i ==n/2 - 1) || (j == n- 1) )
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+             //set cursor inside the border
+            Console.SetCursorPosition(margin,((n/4)-1));
+            Console.WriteLine($"Hello<{s}>!");
+            //Console.WriteLine("*");
+            Console.ReadLine();
+        }
+	}
+}
